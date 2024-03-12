@@ -1,18 +1,13 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
 import { Grid, Tab, Tabs, Paper } from "@mui/material";
 
 const Header = () => {
+    const navigate = useNavigate();
     const [value, setValue] = React.useState(document.location.pathname);
-
-    function timeout(delay) {
-        return new Promise( res => setTimeout(res, delay) );
-    }
-
-    const handleChange = async (event, newPath) => {
+    const handleChange = (event, newPath) => {
         setValue(newPath);
-        window.history.replaceState(null, null, newPath);
-        await timeout(250)
-        window.location.reload(false);
+        navigate(newPath);
     };
     return (
         <Grid container spacing={1}>
