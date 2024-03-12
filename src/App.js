@@ -12,8 +12,8 @@ const theme = createTheme({
 })
 
 const App = () => {
-  if (document.location.pathname == '/'){
-    document.location.pathname = '/dashboard';
+  if (document.location.pathname == '/planner'){
+    document.location.pathname = '/planner/dashboard';
   }
 
   return (
@@ -21,8 +21,8 @@ const App = () => {
       <div>
         <Header />
         <Routes>
-          <Route path="/dashboard" element={<Dashboard />}></Route>
-          <Route path="/tasks" element={<Day />}></Route>
+          <Route path="/planner/dashboard" element={<Dashboard />}></Route>
+          <Route path="/planner/tasks" element={<Day />}></Route>
         </Routes>
       </div>
     </ThemeProvider>

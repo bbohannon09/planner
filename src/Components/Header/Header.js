@@ -22,8 +22,8 @@ const Header = () => {
                     }}
                     indicatorColor="primary"
                     >
-                        <Tab value='/dashboard' label='Dashboard' sx={{ color: 'white' }} />
-                        <Tab value='/tasks' label='Tasks' sx={{ color: 'white' }} />
+                        <Tab value='/planner/dashboard' label='Dashboard' sx={{ color: 'white' }} />
+                        <Tab value='/planner/tasks' label='Tasks' sx={{ color: 'white' }} />
                 </Tabs>
             </Paper>
             </Grid>
