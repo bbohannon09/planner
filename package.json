@@ -1,0 +1,49 @@
+{
+  "name": "personal-planner",
+  "version": "1.0.0",
+  "description": "Personal planner",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "homepage": "https://bbohannon09.github.io/planner",
+  "dependencies": {
+    "@emotion/react": "^11.11.3",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.15.7",
+    "@mui/material": "^5.15.7",
+    "@reduxjs/toolkit": "^2.1.0",
+    "prop-types": "^15.8.1",
+    "react": "^18.2.0",
+    "react-beautiful-dnd": "^13.1.1",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "6.21.3",
+    "react-scripts": "^5.0.1",
+    "sqlite3": "^5.1.7",
+    "styled-components": "6.1.8"
+  },
+  "author": "Braeden",
+  "browsersList": {
+    "development": [
+      "last 1 chrome version"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
