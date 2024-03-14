@@ -1,4 +1,3 @@
-import { LeaderboardTwoTone } from '@mui/icons-material';
 import { createSlice } from '@reduxjs/toolkit';
 
 const addTaskSlice = createSlice({
@@ -11,7 +10,8 @@ const addTaskSlice = createSlice({
     allTasks: [],
     incompleteTasks: [],
     activeTasks: [],
-    finishedTasks: []
+    finishedTasks: [],
+    urlPath: '/planner'
   },
   reducers: {
     setShowModal: (state, action) => {
@@ -118,6 +118,9 @@ const addTaskSlice = createSlice({
       state.activeTasks = JSON.parse(action.payload.activeTasks);
       state.finishedTasks = JSON.parse(action.payload.finishedTasks);
       state.allTasks = JSON.parse(action.payload.allTasks);
+    },
+    updateURL: (state, action) => {
+        state.urlPath = action.payload.newPath
     }
   },
 });
@@ -131,7 +134,8 @@ export const {
   moveTask,
   reorderTasks,
   deleteTask,
-  pageLoad
+  pageLoad,
+  updateURL
 } = addTaskSlice.actions;
 
 export default addTaskSlice.reducer;

@@ -1,8 +1,21 @@
+import React, { useEffect } from "react";
+import { useNavigate } from 'react-router-dom';
 import { Grid, ImageList, ImageListItem } from "@mui/material";
-import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { pageLoad, updateURL } from '../Reducers/DayReducer'
 
 const Dashboard = () => {
+    const dispatch = useDispatch()
+    const navigate = useNavigate();
+    useEffect(() => {
+        dispatch(pageLoad({
+            incompleteTasks: localStorage.getItem('incompleteTasks'),
+            activeTasks: localStorage.getItem('activeTasks'),
+            finishedTasks: localStorage.getItem('finishedTasks'),
+            allTasks: localStorage.getItem('allTasks')
+        }));
+    })
+
     const incompleteCount = JSON.parse(localStorage.getItem('incompleteTasks')).length;
     const activeCount = JSON.parse(localStorage.getItem('activeTasks')).length;
     const finishedCount = JSON.parse(localStorage.getItem('finishedTasks')).length;

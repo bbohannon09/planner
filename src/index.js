@@ -6,6 +6,13 @@ import { Provider } from 'react-redux';
 import store from './Store/Store'
 import { BrowserRouter } from 'react-router-dom';
 
+if (!localStorage.getItem('incompleteTasks') || !localStorage.getItem('activeTasks') || !localStorage.getItem('finishedTasks') || !localStorage.getItem('allTasks')) {
+    localStorage.setItem('incompleteTasks', JSON.stringify([]))
+    localStorage.setItem('activeTasks', JSON.stringify([]))
+    localStorage.setItem('finishedTasks', JSON.stringify([]))
+    localStorage.setItem('allTasks', JSON.stringify([]))
+}
+
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Provider store={store}>
